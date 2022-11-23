@@ -3,11 +3,11 @@ ARG BASE_REGISTRY=docker.io
 ARG BASE_IMAGE=zarguell/ubi8
 ARG BASE_TAG=latest 
 
+FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
+
 ENV SQUID_CACHE_DIR=/var/spool/squid \
     SQUID_LOG_DIR=/var/log/squid \
     SQUID_USER=proxy
-
-FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
 
 USER 0
 
